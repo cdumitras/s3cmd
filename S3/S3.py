@@ -190,11 +190,18 @@ class S3Request(object):
                                           self.body)
 
     def get_triplet(self):
+        self.add_security_token()
         self.update_timestamp()
         self.sign()
         resource = dict(self.resource)  ## take a copy
         resource['uri'] += self.format_param_str()
         return (self.method_string, resource, self.headers)
+
+    def add_security_token(self):
+        if self.s3.config.security_token:
+            self.headers["x-amz-security-token"] = self.s3.config.security_token
+
+
 
 class S3(object):
     http_methods = BidirMap(

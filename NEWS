@@ -1,3 +1,8 @@
+Customizations
+===============
+Added "security_token" support for temporary security credentials,
+used by IAM roles (contributed by Florent Kaisser)
+
 s3cmd-1.6.0      - 2015-09-18
 ===============
 * Support signed URL content disposition type

@@ -26,6 +26,7 @@ class Config(object):
     _doc = {}
     access_key = ""
     secret_key = ""
+    security_token = ""
     access_token = ""
     host_base = "s3.amazonaws.com"
     host_bucket = "%(bucket)s.s3.amazonaws.com"
